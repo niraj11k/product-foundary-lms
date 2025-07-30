@@ -11,7 +11,7 @@ Instead of relying on a single, monolithic LMS, this method **assembles best-in-
 
 ### 🎛️ Backend & Database: **Supabase**
 
-- **Why:** Open-source Firebase alternative, free Postgres database, user auth, file storage, and serverless Edge Functions—all on a generous free tier.
+- **Why:** Open-source Firebase alternative, free Postgres database, user auth, file storage, and serverless Edge Functions—all on a generous free tier.(https://supabase.com/pricing)
 - **Action:** [Create your free Supabase project](https://supabase.io).
 
 > **Supabase is the brain of your LMS, tracking user progress and course structure.**
@@ -130,11 +130,11 @@ npm install @supabase/supabase-js
 
 ## 🧑💻 Quick Start Checklist
 
-- [ ] Create Supabase & Vercel accounts
-- [ ] Initialize GitHub repos (for content & code)
-- [ ] Scaffold Next.js app, install Supabase SDK
-- [ ] Design database schema in Supabase
-- [ ] Connect frontend to Supabase
+- [x] Create Supabase & Vercel accounts
+- [x] Initialize GitHub repos (for content & code)
+- [x] Scaffold Next.js app, install Supabase SDK
+- [x] Design database schema in Supabase
+- [x] Connect frontend to Supabase
 - [ ] Render and lock modules based on progress
 - [ ] Deploy frontend to Vercel
 

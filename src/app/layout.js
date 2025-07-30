@@ -5,7 +5,7 @@ import './globals.css';
 import { SupabaseProvider } from '@/components/SupabaseProvider';
 
 export const metadata = {
-  title: 'Product Foundary LMS Portal - Dev ',
+  title: 'Product Foundry LMS Portal - Dev ',
   description: 'A modern AI learning management system.',
 };
 
