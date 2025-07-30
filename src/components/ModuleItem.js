@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { IconLock, IconCheckCircle, IconPlayCircle } from './Icons';
+import ModuleContent from './ModuleContent'; // Import the new component
 
-export default function ModuleItem({ module, isLocked, isCompleted, onComplete }) {
+export default function ModuleItem({ course, module, isLocked, isCompleted, onComplete }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleToggle = () => {
@@ -27,9 +28,10 @@ export default function ModuleItem({ module, isLocked, isCompleted, onComplete }
             </div>
             {isOpen && !isLocked && (
                 <div className="p-6 border-t border-gray-200">
-                    <p className="text-gray-700 mb-4">
+                    {/* <p className="text-gray-700 mb-4">
                         Module content for: <code className="bg-gray-200 p-1 rounded">{module.slug}</code>
-                    </p>
+                    </p> */}
+                    <ModuleContent repoUrl={course.github_repo_url} moduleSlug={module.slug} />
                     {!isCompleted && (
                         <button
                             onClick={() => onComplete(module.id)}

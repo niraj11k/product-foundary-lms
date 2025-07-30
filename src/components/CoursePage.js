@@ -12,6 +12,11 @@ export default function CoursePage({ course, user, onBack }) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        // Add a guard to prevent fetching if the user object is not available.
+        if (!user) {
+            setLoading(false);
+            return;
+        }
         const fetchData = async () => {
             try {
                 setLoading(true);
@@ -77,7 +82,8 @@ export default function CoursePage({ course, user, onBack }) {
                     if (!isLocked) {
                        isPreviousModuleCompleted = isCompleted;
                     }
-                    return <ModuleItem key={module.id} module={module} isLocked={isLocked} isCompleted={isCompleted} onComplete={handleMarkAsComplete} />;
+                    // return <ModuleItem key={module.id} module={module} isLocked={isLocked} isCompleted={isCompleted} onComplete={handleMarkAsComplete} />;
+                    return <ModuleItem key={module.id} course={course} module={module} isLocked={isLocked} isCompleted={isCompleted} onComplete={handleMarkAsComplete} />;
                 })}
             </div>
         </div>

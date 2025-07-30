@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from 'react';
 import { SupabaseContext } from './SupabaseProvider';
 import CoursePage from './CoursePage';
 
-export default function Dashboard({ session }) {
+export default function Dashboard({ user }) {
     const { supabase } = useContext(SupabaseContext);
     const [courses, setCourses] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -29,7 +29,7 @@ export default function Dashboard({ session }) {
     }, [supabase]);
 
     if (selectedCourse) {
-        return <CoursePage course={selectedCourse} session={session} onBack={() => setSelectedCourse(null)} />;
+        return <CoursePage course={selectedCourse} user={user} onBack={() => setSelectedCourse(null)} />;
     }
 
     if (loading) return <div className="text-center p-8">Loading courses...</div>;
